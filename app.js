@@ -22,16 +22,16 @@ window.addEventListener('load', () => {
                 console.log(countries[i]);
             }
 
-            var country = "Global";
+            var country = "Total";
             var row = table1.insertRow(2);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
             cell1.innerHTML = country;
-            cell2.innerHTML = `${numberWithCommas(data.Global.TotalConfirmed)}`;
-            cell3.innerHTML = `${numberWithCommas(data.Global.TotalDeaths)}`;
-            cell4.innerHTML = `${numberWithCommas(data.Global.TotalConfirmed)}`;
+            cell2.innerHTML = data.Global.TotalConfirmed;
+            cell3.innerHTML = data.Global.TotalDeaths;
+            cell4.innerHTML = data.Global.TotalConfirmed;
 
 
             for (i = 0; i < countries.length; i++) {
@@ -41,10 +41,10 @@ window.addEventListener('load', () => {
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
                 var cell4 = row.insertCell(3);
-                cell1.innerHTML = `${numberWithCommas(country.Country)}`;
-                cell2.innerHTML = `${numberWithCommas(country.TotalConfirmed)}`;
-                cell3.innerHTML = `${numberWithCommas(country.TotalDeaths)}`;
-                cell4.innerHTML = `${numberWithCommas(country.TotalConfirmed)}`;
+                cell1.innerHTML = country.Country;
+                cell2.innerHTML = country.TotalConfirmed;
+                cell3.innerHTML = country.TotalDeaths;
+                cell4.innerHTML = country.TotalConfirmed;
 
             }
             lastupdated.innerHTML += "  " + country.Date;
@@ -84,6 +84,30 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
         .forEach(tr => table.appendChild(tr));
 })));
 
+
+
+
+// const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+
+// const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
+//     v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+// )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+// // console.log(v1);
+
+// // do the work...
+// document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+//     const table = th.closest('table');
+//     Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+//         .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+//         .forEach(tr => {
+//             table.appendChild(tr);
+//             console.log(`${numberWithCommas(tr)}`);
+//         });
+
+// })));
+
+// cell4.innerHTML = `${numberWithCommas(country.TotalConfirmed)} `;
 
 // data1 = `
 //             <td>${"Global"}</td>
