@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
             cell1.innerHTML = country;
             cell2.innerHTML = data.Global.TotalConfirmed;
             cell3.innerHTML = data.Global.TotalDeaths;
-            cell4.innerHTML = data.Global.TotalConfirmed;
+            cell4.innerHTML = data.Global.TotalRecovered;
 
 
             for (i = 0; i < countries.length; i++) {
@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
                 cell1.innerHTML = country.Country;
                 cell2.innerHTML = country.TotalConfirmed;
                 cell3.innerHTML = country.TotalDeaths;
-                cell4.innerHTML = country.TotalConfirmed;
+                cell4.innerHTML = country.TotalRecovered;
 
             }
             lastupdated.innerHTML += "  " + country.Date;
